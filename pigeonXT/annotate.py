@@ -340,7 +340,7 @@ def annotate(
         annotationNumberBox = BoundedIntText(value=1, 
             min=1, 
             max=len(annotations), 
-            step=1, description="Index: ")
+            step=1, description="Go to position: ")
         def goToIndex(b):
             nonlocal current_index
             current_index = annotationNumberBox.value - 1
