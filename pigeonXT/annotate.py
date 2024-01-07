@@ -294,12 +294,14 @@ def annotate(
 
     def next_example(*_, **__):
         """Increase current index."""
+        nonlocal current_index
         if current_index < len(annotations):
             current_index += 1
             render(current_index)
 
     def prev_example(*_, **__):
         """Decrease current index."""
+        nonlocal current_index
         if current_index > 0:
             current_index -= 1
             render(current_index)
