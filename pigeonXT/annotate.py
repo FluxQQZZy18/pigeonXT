@@ -359,6 +359,7 @@ def annotate(
                     if reset_buttons_after_click:
                         tgl_btn.value = False
             add_annotation(labels_on)
+            annotationNumberBox.value = current_index
 
         btn.on_click(on_click)
         buttons.append(btn)
