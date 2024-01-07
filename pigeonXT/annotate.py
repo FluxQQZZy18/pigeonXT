@@ -20,7 +20,7 @@ from ipywidgets import (
 import pandas as pd
 from typing import Tuple
 
-defaultLayout = Layout(width="auto")
+btnLayout = Layout(width="auto")
 
 def annotate(
     examples: Union[list, pd.DataFrame],
@@ -334,7 +334,7 @@ def annotate(
 
     elif task_type == "multilabel-classification":
         for label in options:
-            tgl = ToggleButton(description=label, layout=defaultLayout)
+            tgl = ToggleButton(description=label, layout=btnLayout)
             buttons.append(tgl)
         btn = Button(description="submit", button_style="info")
         annotationNumberBox = BoundedIntText(value=1, 
@@ -342,7 +342,7 @@ def annotate(
             max=len(annotations), 
             step=1, 
             description="Go to position: ",
-            layout=defaultLayout)
+            style={'description_width': 'initial'})
         def goToIndex(b):
             nonlocal current_index
             current_index = annotationNumberBox.value - 1
