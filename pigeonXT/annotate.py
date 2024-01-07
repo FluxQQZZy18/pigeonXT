@@ -342,8 +342,9 @@ def annotate(
             max=len(annotations), 
             step=1, description="Index: ")
         def goToIndex(b):
-            render(annotationNumberBox.value - 1)
+            nonlocal current_index
             current_index = annotationNumberBox.value - 1
+            render(current_index)
         goBtn = Button(description="go", button_style="info")
         goBtn.on_click(goToIndex)
 
