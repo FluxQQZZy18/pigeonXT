@@ -199,7 +199,7 @@ def annotate(
         nonlocal count_label
         labeled = len(annotations.loc[annotations["changed"]])
         str_output = (
-            f"{labeled} of {len(annotations)} Examples annotated ({round(labeled / len(annotations), 2)}% done), Current Position: {index + 1} "
+            f"{labeled} of {len(annotations)} Examples annotated ({round((labeled / len(annotations)) * 100, 2)}% done), Current Position: {index + 1} "
         )
         if id_column in annotations.columns and 0 <= index < len(annotations):
             ix = annotations.iloc[index].name
