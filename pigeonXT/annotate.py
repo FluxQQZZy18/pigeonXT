@@ -344,6 +344,9 @@ def annotate(
         goBtn = Button(description="go", button_style="info")
         goBtn.on_click(goToIndex)
 
+        display(annotationNumberBox)
+        display(goBtn)
+
         def on_click(*_, **__):
             labels_on = []
             for tgl_btn in buttons:
