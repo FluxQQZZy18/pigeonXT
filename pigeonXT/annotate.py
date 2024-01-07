@@ -339,7 +339,7 @@ def annotate(
             min=0, 
             max=len(annotations) - 1, 
             step=1, description="Index: ")
-        def goToIndex():
+        def goToIndex(b):
             render(annotationNumberBox.value)
         goBtn = Button(description="go", button_style="info")
         goBtn.on_click(goToIndex)
