@@ -334,6 +334,14 @@ def annotate(
             tgl = ToggleButton(description=label)
             buttons.append(tgl)
         btn = Button(description="submit", button_style="info")
+        annotationNumberBox = BoundedIntText(value=annotations.iloc[current_index].name, 
+            min=0, 
+            max=len(annotations) - 1, 
+            step=1, description="Index: ")
+        def goToIndex():
+            render(annotationNumberBox.value)
+        goBtn = Button(description="go", button_style="info")
+        goBtn.on_click(goToIndex)
 
         def on_click(*_, **__):
             labels_on = []
