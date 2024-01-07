@@ -4,6 +4,7 @@ import functools
 
 from IPython.display import display, HTML, clear_output
 from ipywidgets import (
+    Layout,
     BoundedIntText,
     Button,
     Dropdown,
@@ -19,6 +20,7 @@ from ipywidgets import (
 import pandas as pd
 from typing import Tuple
 
+btnLayout = Layout(width="auto")
 
 def annotate(
     examples: Union[list, pd.DataFrame],
@@ -332,9 +334,9 @@ def annotate(
 
     elif task_type == "multilabel-classification":
         for label in options:
-            tgl = ToggleButton(description=label)
+            tgl = ToggleButton(description=label, layout=btnLayout)
             buttons.append(tgl)
-        btn = Button(description="submit", button_style="info")
+        btn = Button(description="submit", button_style="info", description_width="")
         annotationNumberBox = BoundedIntText(value=0, 
             min=0, 
             max=len(annotations) - 1, 
