@@ -286,7 +286,7 @@ def annotate(
             annotations.at[ix, value_column] = annotation
         annotations.at[ix, "changed"] = True
         if example_process_fn is not None:
-            example_process_fn(annotations.at[ix, example_column], annotation)
+            example_process_fn(annotations.at[ix, example_column], annotation, ix)
         next_example()
 
     def next_example(*_, **__):
