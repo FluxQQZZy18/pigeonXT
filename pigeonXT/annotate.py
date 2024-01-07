@@ -4,6 +4,7 @@ import functools
 
 from IPython.display import display, HTML, clear_output
 from ipywidgets import (
+    BoundedIntText,
     Button,
     Dropdown,
     HTML,
