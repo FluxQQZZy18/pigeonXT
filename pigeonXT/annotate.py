@@ -337,12 +337,12 @@ def annotate(
             tgl = ToggleButton(description=label, layout=btnLayout)
             buttons.append(tgl)
         btn = Button(description="submit", button_style="info", description_width="")
-        annotationNumberBox = BoundedIntText(value=0, 
-            min=0, 
-            max=len(annotations) - 1, 
+        annotationNumberBox = BoundedIntText(value=1, 
+            min=1, 
+            max=len(annotations), 
             step=1, description="Index: ")
         def goToIndex(b):
-            render(annotationNumberBox.value)
+            render(annotationNumberBox.value + 1)
         goBtn = Button(description="go", button_style="info")
         goBtn.on_click(goToIndex)
 
